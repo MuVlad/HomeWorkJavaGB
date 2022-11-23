@@ -10,25 +10,25 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        int number = dataInput();
+        int number = inputData();
         System.out.printf("Треугольного число %d = %d%n", number, calculateTriangularNumber(number));
         System.out.printf("Факториал числа %d = %d%n", number, calculateFactorial(number));
 
     }
 
-    private static int dataInput() {
+    private static int inputData() {
         System.out.print("Введите целое положительное число: ");
         int number;
         if (scanner.hasNextInt()) {
             number = scanner.nextInt();
             if (!isPositiveDigit(number)) {
                 System.out.println("Необходимо ввести положительное число");
-                number = dataInput();
+                number = inputData();
             }
         } else {
             System.out.println("Введеные вами данные не являются целым числом! Попробуйте еще раз");
             scanner.next();
-            number = dataInput();
+            number = inputData();
         }
         return number;
     }
