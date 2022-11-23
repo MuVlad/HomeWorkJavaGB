@@ -6,25 +6,31 @@ package homeWork1;
 import java.util.Scanner;
 
 public class Task1 {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        int number = 0;
-
-        System.out.print("Введите целое положительное число: ");
-
-        try {
-            number = scanner.nextInt();
-        } catch (Exception e) {
-            System.out.println("Введеные вами данные не являются целым числом!");
-            e.printStackTrace();
-        }
-
-        if (!isPositiveDigit(number)) {
-            System.out.println("Число должно быть положительным!");
-        }
+        int number = dataInput();
         System.out.printf("Треугольного число %d = %d%n", number, calculateTriangularNumber(number));
-        System.out.printf("Факториал числа %d = %d%n", number,calculateFactorial(number));
+        System.out.printf("Факториал числа %d = %d%n", number, calculateFactorial(number));
+
+    }
+
+    private static int dataInput() {
+        System.out.print("Введите целое положительное число: ");
+        int number;
+        if (scanner.hasNextInt()) {
+            number = scanner.nextInt();
+            if (!isPositiveDigit(number)) {
+                System.out.println("Необходимо ввести положительное число");
+                number = dataInput();
+            }
+        } else {
+            System.out.println("Введеные вами данные не являются целым числом! Попробуйте еще раз");
+            scanner.next();
+            number = dataInput();
+        }
+        return number;
     }
 
     private static boolean isPositiveDigit(int number) {
