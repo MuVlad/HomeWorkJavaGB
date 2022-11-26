@@ -9,16 +9,15 @@ package homeWork2;
 
 //код получился весь из костылей надеюсь вы покажите хорошее решение!
 public class Task1 {
-    static StringBuilder result = new StringBuilder();
 
     public static void main(String[] args) {
-        String sqlRequest = "select * from students where \"name\":\"Ivanov\"," +
-                " \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"";
+        StringBuilder result = new StringBuilder();
+        String sqlRequest = "select * from students where ";
+        String json = "\"name\":\"Ivanov\"," +
+                " \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"18\"";
 
-        String[] str = sqlRequest.split("where", 2);
-        result.append(str[0]);
-        result.append("where");
-        result.append(stringFilter(str[1]));
+        result.append(sqlRequest);
+        result.append(stringFilter(json));
         System.out.println(result);
     }
 
@@ -26,15 +25,13 @@ public class Task1 {
         StringBuilder sb = new StringBuilder();
         String[] strFilter = str.split(",");
         for (int i = 0; i < strFilter.length; i++) {
-            if (i == strFilter.length - 1 && !strFilter[i].endsWith("\"null\"")) {
+            if (!strFilter[i].endsWith("\"null\"")) {
                 sb.append((strFilter[i].replace(":", " = ").replace("\"", "")));
-            } else if (!strFilter[i].endsWith("\"null\"")) {
-                sb.append((strFilter[i].replace(":", " = ").replace("\"", "")));
-                if (i != strFilter.length - 2) {
-                    sb.append(" and");
-                }
+                sb.append(" and");
             }
         }
         return sb;
     }
 }
+
+
