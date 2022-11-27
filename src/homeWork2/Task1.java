@@ -7,30 +7,43 @@
  */
 package homeWork2;
 
-//код получился весь из костылей надеюсь вы покажите хорошее решение!
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class Task1 {
 
     public static void main(String[] args) {
-        StringBuilder result = new StringBuilder();
         String sqlRequest = "select * from students where ";
         String json = "\"name\":\"Ivanov\"," +
-                " \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"18\"";
+                " \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"";
 
-        result.append(sqlRequest);
-        result.append(stringFilter(json));
+        String result = sqlRequest + streamFilter(json);
         System.out.println(result);
     }
 
-    static StringBuilder stringFilter(String str) {
+    // это какая-то костыльная получилась сортировка
+    static StringBuilder stringBuilderFilter(String str) {
         StringBuilder sb = new StringBuilder();
         String[] strFilter = str.split(",");
-        for (int i = 0; i < strFilter.length; i++) {
-            if (!strFilter[i].endsWith("\"null\"")) {
-                sb.append((strFilter[i].replace(":", " = ").replace("\"", "")));
+        for (String s : strFilter) {
+            if (!s.endsWith("\"null\"")) {
+                sb.append((s.replace(":", " = ").replace("\"", "")));
                 sb.append(" and");
             }
         }
+        if (String.valueOf(sb).endsWith("and")) {
+            sb.delete(sb.length() - 4, sb.length());
+        }
         return sb;
+    }
+
+    static String streamFilter(String str) {
+        String[] strFilter = str.split(",");
+        return Arrays.stream(strFilter)
+                        .filter(s -> !s.contains("null"))
+                        .map(s -> s.replace(":"," = "))
+                        .map(s -> s.replace("\"",""))
+                        .collect(Collectors.joining(" and"));
     }
 }
 
