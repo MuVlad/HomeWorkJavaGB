@@ -1,4 +1,4 @@
-package homeWork6;
+package core.homeWork6;
 
 import java.util.Objects;
 

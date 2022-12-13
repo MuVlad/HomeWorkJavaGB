@@ -1,7 +1,7 @@
 /**
  * 3. Реализовать простой калькулятор
  */
-package homeWork1;
+package core.homeWork1;
 
 
 import java.util.Scanner;

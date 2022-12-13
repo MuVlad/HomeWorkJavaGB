@@ -1,4 +1,4 @@
-package homeWork6;
+package core.homeWork6;
 
 import java.util.*;
 
@@ -50,7 +50,7 @@ public class Main {
                     setCriteria.add(String.valueOf(laptop.getCompany()));
                 }
                 positions = outputGoods(setCriteria);
-                System.out.print("Выберите интрересующую вас фирму: ");
+                System.out.print("Введите цифру интрересующей вас фирмы: ");
                 positionNumber = scanner.nextInt();
                 break;
             case "operatingSystem":
@@ -58,7 +58,7 @@ public class Main {
                     setCriteria.add(String.valueOf(laptop.getOperatingSystem()));
                 }
                 positions = outputGoods(setCriteria);
-                System.out.print("Выберите интрересующую вас опреационную систему: ");
+                System.out.print("Введите цифру интрересующуей вас опреационной системы: ");
                 positionNumber = scanner.nextInt();
                 break;
             case "ram":
@@ -66,7 +66,7 @@ public class Main {
                     setCriteria.add(String.valueOf(laptop.getRam()));
                 }
                 positions = outputGoods(setCriteria);
-                System.out.print("Выберите минимальный интересующий вас объем ОЗУ: ");
+                System.out.print("Введите цифру минимального интересующего вас объем ОЗУ: ");
                 positionNumber = scanner.nextInt();
                 break;
             case "hardDiskCapacity":
@@ -74,7 +74,7 @@ public class Main {
                     setCriteria.add(String.valueOf(laptop.getHardDiskCapacity()));
                 }
                 positions = outputGoods(setCriteria);
-                System.out.print("Выберите минимальный интересующий вас объем памяти: ");
+                System.out.print("Введите цифру минимального интересующего вас объема памяти: ");
                 positionNumber = scanner.nextInt();
                 break;
             case "price":
@@ -82,7 +82,7 @@ public class Main {
                     setCriteria.add(String.valueOf(laptop.getPrice()));
                 }
                 positions = outputGoods(setCriteria);
-                System.out.print("Выберите минимальную интересующаю вас ценову: ");
+                System.out.print("Введите цифру минимальной интересующай вас ценны: ");
                 positionNumber = scanner.nextInt();
                 break;
         }

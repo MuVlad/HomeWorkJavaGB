@@ -1,4 +1,4 @@
-package homeWork4;
+package core.homeWork4;
 
 import java.util.LinkedList;
 import java.util.Queue;

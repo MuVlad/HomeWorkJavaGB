@@ -5,7 +5,7 @@
  * то есть должно получиться что-то вроде:
  * ... where name = Ivanov and country = Russia and city = Moscow
  */
-package homeWork2;
+package core.homeWork2;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package HomeWork3;
+package core.HomeWork3;
 
 /**
  * Реализовать алгоритм сортировки слиянием

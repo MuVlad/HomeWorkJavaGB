@@ -1,8 +1,7 @@
-package HomeWork3;
+package core.HomeWork3;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Пусть дан произвольный список целых чисел, удалить из него четные числа

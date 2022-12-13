@@ -1,7 +1,7 @@
 /**
  * 2. Вывести все простые числа от 1 до 1000
  */
-package homeWork1;
+package core.homeWork1;
 
 public class Task2 {
     public static void main(String[] args) {

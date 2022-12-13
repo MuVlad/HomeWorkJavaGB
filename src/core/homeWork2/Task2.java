@@ -2,7 +2,7 @@
  * Реализуйте алгоритм сортировки пузырьком числового массива,
  * результат после каждой итерации запишите в лог-файл.
  */
-package homeWork2;
+package core.homeWork2;
 
 
 import java.io.IOException;

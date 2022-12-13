@@ -1,4 +1,4 @@
-package homeWork5;
+package core.homeWork5;
 
 import java.util.*;
 
