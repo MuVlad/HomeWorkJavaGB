@@ -1,6 +1,6 @@
 package oop.homeWork1;
 
-public class Child extends Human {
+public class Child extends Human implements IMather, IFather {
 
     private Father father;
     private Mather mather;
@@ -22,5 +22,15 @@ public class Child extends Human {
     public void sayHello() {
         super.sayHello();
         System.out.println(" я ребенок!");
+    }
+
+    @Override
+    public void getPower() {
+        System.out.println("Моя сила = 15");
+    }
+
+    @Override
+    public void getFlexibility() {
+        System.out.println("Моя гибкость = 30");
     }
 }

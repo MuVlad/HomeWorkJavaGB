@@ -2,7 +2,7 @@ package oop.homeWork1;
 
 import java.util.LinkedHashSet;
 
-public class Father extends Human {
+public class Father extends Human implements IFather {
 
     private LinkedHashSet<Human> children = new LinkedHashSet<>();
 
@@ -22,5 +22,10 @@ public class Father extends Human {
     public void sayHello() {
         super.sayHello();
         System.out.println(" я отец!");
+    }
+
+    @Override
+    public void getPower() {
+        System.out.println("Моя сила = 30");
     }
 }
