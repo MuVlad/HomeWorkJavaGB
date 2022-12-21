@@ -5,6 +5,10 @@ public class Child extends Human implements IMather, IFather {
     private Father father;
     private Mather mather;
 
+    public Child(String name, Integer age, Character male, String socialStatus) {
+        super(name, age, male, socialStatus);
+    }
+
     public Child(String name, Integer age, Character male, String socialStatus, Father father, Mather mather) {
         super(name, age, male, socialStatus);
         this.father = father;
